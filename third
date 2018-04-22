@@ -1,0 +1,42 @@
+public class Example5_17 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+              AdvertisementBoard board = new AdvertisementBoard();
+              board.show(new PhilipsCorp());
+              board.show(new LenovoCorp());
+	}
+
+}
+public interface Advertisement {
+             public abstract void showAdvertisement();
+             public abstract String getCorpName();
+}
+public class AdvertisementBoard {
+         public void show(Advertisement adver) {
+        	 System.out.println("广告牌显示"+adver.getCorpName()+"公司的广告词");
+        	 adver.showAdvertisement();
+         }
+}
+public class PhilipsCorp implements Advertisement {
+	public void showAdvertisement() {
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("没有最好，只有更好");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@");
+		
+	}
+        public String getCorpName() {
+        	return "飞利浦";
+        }
+}
+public class LenovoCorp implements Advertisement {
+        public void showAdvertisement() {
+
+        	System.out.println("************************");
+        	System.out.println("让时间变得很小");
+        	System.out.println("************************");
+        }
+        public String getCorpName() {
+        	return "联想集团";
+        }
+}
